@@ -34,13 +34,13 @@ bindings="$hypr_dir/bindings.lua"
 autostart="$hypr_dir/autostart.lua"
 touch "$bindings" "$autostart"
 
-if ! grep -Fq 'STARK ARC REACTOR MENUS' "$bindings"; then
+if ! grep -Fq 'Stark Arc Reactor' "$bindings"; then
     cp "$bindings" "$bindings.bak.stark-$stamp"
     printf '\n' >> "$bindings"
     sed "s|\$HOME|$HOME|g" "$repo_dir/integration/bindings.lua" >> "$bindings"
 fi
 
-if ! grep -Fq 'STARK ARC REACTOR AUTOSTART' "$autostart"; then
+if ! grep -Fq 'stark-launcher' "$autostart"; then
     cp "$autostart" "$autostart.bak.stark-$stamp"
     printf '\n' >> "$autostart"
     sed "s|\$HOME|$HOME|g" "$repo_dir/integration/autostart.lua" >> "$autostart"
