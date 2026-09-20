@@ -1,0 +1,52 @@
+@define-color bg #080A0D;
+@define-color fg #E6E6E6;
+@define-color red #FF1E32;
+@define-color dark_red #351017;
+@define-color cyan #00D9FF;
+@define-color gold #FFD700;
+@define-color gray #626A73;
+
+window {
+    background-color: @bg;
+    color: @fg;
+    border: 2px solid @red;
+    border-radius: 8px;
+}
+
+input {
+    background-color: #101318;
+    color: @fg;
+    border: 1px solid @cyan;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+input:focus {
+    border: 1px solid @gold;
+}
+
+#entry {
+    color: @fg;
+    background-color: transparent;
+    padding: 8px;
+    margin: 2px;
+}
+
+#entry:selected {
+    background-color: @dark_red;
+    color: @gold;
+    border-left: 3px solid @red;
+}
+
+scrollbar {
+    background-color: @bg;
+}
+
+scrollbar slider {
+    background-color: @red;
+    border-radius: 5px;
+}
+
+scrollbar slider:hover {
+    background-color: @cyan;
+}

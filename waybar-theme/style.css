@@ -1,0 +1,119 @@
+/* ============================================
+   STARK INDUSTRIES — JARVIS WAYBAR
+   ============================================ */
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    font-weight: 600;
+}
+
+window#waybar {
+    background: rgba(8, 10, 13, 0.94);
+    color: #E6E6E6;
+    border-bottom: 1px solid rgba(255, 30, 50, 0.45);
+}
+
+/* Workspaces */
+
+#workspaces {
+    margin: 0 8px;
+}
+
+#workspaces button {
+    color: #626A73;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0 8px;
+}
+
+#workspaces button:hover {
+    color: #FFD700;
+    background: rgba(255, 215, 0, 0.08);
+}
+
+#workspaces button.active {
+    color: #FF1E32;
+    background: rgba(255, 30, 50, 0.10);
+    border-bottom: 2px solid #FFD700;
+}
+
+/* System */
+
+#cpu,
+#memory,
+#temperature {
+    color: #00D9FF;
+}
+
+#cpu.warning,
+#memory.warning,
+#temperature.warning {
+    color: #FFD700;
+}
+
+#cpu.critical,
+#memory.critical,
+#temperature.critical {
+    color: #FF1E32;
+}
+
+/* Network */
+
+#network {
+    color: #00B8FF;
+}
+
+#network.disconnected {
+    color: #FF1E32;
+}
+
+/* Audio */
+
+#pulseaudio {
+    color: #FF1E32;
+}
+
+#pulseaudio.muted {
+    color: #626A73;
+}
+
+/* Battery */
+
+#battery {
+    color: #55FF88;
+}
+
+#battery.warning {
+    color: #FFD700;
+}
+
+#battery.critical {
+    color: #FF1E32;
+}
+
+/* Clock */
+
+#clock {
+    color: #FFD700;
+}
+
+/* Tray */
+
+#tray {
+    color: #E6E6E6;
+}
+
+/* Common module spacing */
+
+#cpu,
+#memory,
+#temperature,
+#network,
+#pulseaudio,
+#battery,
+#clock,
+#tray {
+    padding: 0 7px;
+}

@@ -1,0 +1,27 @@
+@define-color selected-text #FFD700;
+@define-color text #E6E6E6;
+@define-color background #080A0D;
+@define-color border #FF1E32;
+@define-color foreground #E6E6E6;
+@define-color accent #00D9FF;
+
+window {
+    background: @background;
+    border: 2px solid @border;
+}
+
+#input {
+    color: @foreground;
+}
+
+#scroll {
+    background: @background;
+}
+
+child:selected {
+    background: #351017;
+}
+
+child:selected label {
+    color: @selected-text;
+}

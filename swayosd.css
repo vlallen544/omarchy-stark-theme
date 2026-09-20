@@ -1,0 +1,17 @@
+window {
+    background: #080A0D;
+    border: 2px solid #FF1E32;
+}
+
+#osd {
+    background: #080A0D;
+    color: #E6E6E6;
+}
+
+progressbar trough {
+    background: #252A30;
+}
+
+progressbar progress {
+    background: #FF1E32;
+}

@@ -1,0 +1,69 @@
+mode = "dark"
+
+# ============================================
+# STARK INDUSTRIES / IRON MAN
+# ============================================
+
+accent = "#FF1E32"
+
+foreground = "#E6E6E6"
+background = "#080A0D"
+
+selection_foreground = "#FFFFFF"
+selection_background = "#5A1118"
+
+# Backgrounds
+bg = "#080A0D"
+lighter_bg = "#101318"
+selection = "#252A30"
+muted = "#626A73"
+
+dark_fg = "#8A929A"
+fg = "#E6E6E6"
+light_fg = "#F2F2F2"
+bright_fg = "#FFFFFF"
+
+# Iron Man palette
+red = "#FF1E32"
+green = "#55FF88"
+yellow = "#FFD700"
+blue = "#00B8FF"
+magenta = "#FF3CAC"
+cyan = "#00D9FF"
+orange = "#FF8A00"
+brown = "#8A5A20"
+
+# Deep metallic backgrounds
+dark_bg = "#15191E"
+darker_bg = "#050608"
+
+# Bright accents
+bright_red = "#FF4A59"
+bright_yellow = "#FFE766"
+bright_green = "#7AFFA7"
+bright_cyan = "#66E7FF"
+bright_blue = "#4DCAFF"
+bright_magenta = "#FF75C8"
+
+# Omarchy UI
+active_border_color = "#FF1E32"
+active_tab_background = "#351017"
+
+# ANSI colors
+color0 = "#080A0D"
+color1 = "#FF1E32"
+color2 = "#55FF88"
+color3 = "#FFD700"
+color4 = "#00B8FF"
+color5 = "#FF3CAC"
+color6 = "#00D9FF"
+color7 = "#E6E6E6"
+
+color8 = "#626A73"
+color9 = "#FF4A59"
+color10 = "#7AFFA7"
+color11 = "#FFE766"
+color12 = "#4DCAFF"
+color13 = "#FF75C8"
+color14 = "#66E7FF"
+color15 = "#FFFFFF"

@@ -1,0 +1,50 @@
+/* ============================================
+   STARK INDUSTRIES - WAYBAR
+   ============================================ */
+
+* {
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 13px;
+}
+
+window#waybar {
+    background: rgba(8, 10, 13, 0.94);
+    color: #E6E6E6;
+}
+
+#workspaces button {
+    color: #626A73;
+    background: transparent;
+    border-radius: 0;
+}
+
+#workspaces button.active {
+    color: #FF1E32;
+    border-bottom: 2px solid #FFD700;
+}
+
+#clock {
+    color: #FFD700;
+}
+
+#cpu,
+#memory,
+#temperature {
+    color: #00D9FF;
+}
+
+#battery {
+    color: #55FF88;
+}
+
+#network {
+    color: #00B8FF;
+}
+
+#pulseaudio {
+    color: #FF1E32;
+}
+
+#tray {
+    color: #E6E6E6;
+}
