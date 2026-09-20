@@ -16,6 +16,14 @@ overrides. It backs up `bindings.lua` and `autostart.lua` before changing them.
 
 ## Install
 
+After this repository is published, install everything with one command:
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/vlallen544/omarchy-stark-theme/main/install-from-github.sh)
+```
+
+Or clone it first so you can inspect the files before running the installer:
+
 ```bash
 git clone https://github.com/vlallen544/omarchy-stark-theme.git
 cd omarchy-stark-theme

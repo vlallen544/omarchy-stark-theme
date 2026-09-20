@@ -22,6 +22,7 @@ if [[ $repo_dir != "$theme_dir" ]]; then
         --exclude='launcher' \
         --exclude='integration' \
         --exclude='install.sh' \
+        --exclude='install-from-github.sh' \
         --exclude='.gitignore' \
         "$repo_dir/" "$theme_dir/"
 fi
