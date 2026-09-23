@@ -3,6 +3,16 @@
 An Iron Man / JARVIS-inspired Omarchy theme with a custom Quickshell Arc
 Reactor launcher.
 
+## Theme description
+
+Stark Arc Reactor is a dark, high-contrast desktop theme built around the
+glow of an Iron Man arc reactor: near-black metallic surfaces, bright reactor
+cyan for focus and navigation, and red, gold, and blue accents for status and
+syntax colors. It extends the visual language beyond wallpapers and window
+borders to the Omarchy shell, terminals, editors, GTK applications, keyboard
+lighting, and a searchable Quickshell launcher, creating a consistent
+JARVIS-inspired workspace.
+
 ## What it installs
 
 - The Stark color theme and bundled wallpapers.
