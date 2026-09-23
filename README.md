@@ -10,6 +10,8 @@ Reactor launcher.
 - A Stark command menu on `Super + Space`.
 - A Stark system menu on `Super + Escape`.
 - A resident Quickshell launcher for fast opening.
+- Matching Omarchy shell, GTK/Aether, Foot, Helix, Fish/FZF, and keyboard
+  palette support.
 
 The installer copies only the launcher and the small Stark-specific Hyprland
 overrides. It backs up `bindings.lua` and `autostart.lua` before changing them.

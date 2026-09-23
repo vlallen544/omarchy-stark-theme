@@ -1,0 +1,92 @@
+# Arc-reactor shell surfaces for Omarchy. These explicit tokens keep the bar,
+# popups, notifications, and built-in launcher aligned with Stark's custom UI.
+
+[bar]
+background = "#080A0D"
+background-alpha = 0.88
+text = "#E6E6E6"
+active = "#00D9FF"
+size-horizontal = 26
+size-vertical = 28
+
+[hyprland]
+active-border = "#FF1E32 #00D9FF 45deg"
+active-border-foreground = "#00D9FF #FFFFFF 45deg"
+
+[controls]
+normal-color = "#E6E6E6"
+normal-fill-alpha = 0.04
+normal-border = "#626A73"
+normal-border-width = 1
+normal-border-alpha = 0.50
+hover-cursor-color = "#00D9FF"
+hover-cursor-fill-alpha = 0.10
+hover-cursor-border = "#00D9FF"
+hover-cursor-border-width = 1
+hover-cursor-border-alpha = 0.75
+focus-color = "#FF1E32"
+focus-fill-alpha = 0.14
+focus-border = "#FF1E32"
+focus-border-width = 1
+focus-border-alpha = 0.90
+selected-color = "#00D9FF"
+selected-fill-alpha = 0.16
+selected-border = "#00D9FF"
+selected-border-width = 1
+selected-border-alpha = 0.85
+
+[popups]
+background = "#101318"
+background-alpha = 0.94
+text = "#E6E6E6"
+border = "hyprland.active-border"
+border-alpha = 1.0
+border-width = 2
+
+[tooltip]
+background = "#080A0D"
+background-alpha = 0.97
+text = "#E6E6E6"
+border = "#00D9FF"
+border-alpha = 0.80
+
+[notifications]
+background = "#101318"
+background-alpha = 0.96
+text = "#E6E6E6"
+border = "hyprland.active-border"
+border-alpha = 1.0
+border-width = 2
+countdown = "#00D9FF"
+
+[launcher]
+background = "#080A0D"
+background-alpha = 0.95
+text = "#E6E6E6"
+border = "hyprland.active-border"
+border-alpha = 1.0
+border-width = 2
+scrim = "#000000"
+scrim-alpha = 0.62
+selected-background = "#351017"
+selected-background-alpha = 0.72
+selected-text = "#FFFFFF"
+selected-border = "#FF1E32"
+selected-border-alpha = 0.80
+selected-border-width = 1
+
+[menu]
+background = "#101318"
+background-alpha = 0.96
+text = "#E6E6E6"
+border = "hyprland.active-border"
+border-alpha = 1.0
+border-width = 2
+scrim = "#000000"
+scrim-alpha = 0.62
+selected-background = "#351017"
+selected-background-alpha = 0.75
+selected-text = "#FFFFFF"
+selected-border = "#00D9FF"
+selected-border-alpha = 0.85
+selected-border-width = 1

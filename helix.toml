@@ -1,0 +1,52 @@
+# The palette keys let Helix follow Stark without duplicating its color table.
+"keyword" = "color5"
+"function" = "color4"
+"type" = "color3"
+"constant" = "color3"
+"string" = "color2"
+"comment" = { fg = "color8", modifiers = ["italic"] }
+"variable" = "foreground"
+"variable.parameter" = { fg = "color6", modifiers = ["italic"] }
+"operator" = "color6"
+"punctuation" = "color8"
+"tag" = "color4"
+"attribute" = "color3"
+"markup.heading.1" = "color1"
+"markup.heading.2" = "color3"
+"markup.bold" = { fg = "color1", modifiers = ["bold"] }
+"markup.link.url" = { fg = "color4", modifiers = ["underlined"] }
+"diff.plus" = "color2"
+"diff.minus" = "color1"
+"diff.delta" = "color4"
+"ui.background" = { }
+"ui.linenr" = { fg = "color8" }
+"ui.linenr.selected" = { fg = "foreground" }
+"ui.statusline" = { fg = "background", bg = "foreground" }
+"ui.statusline.normal" = { fg = "background", bg = "color4", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "background", bg = "color2", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "background", bg = "color5", modifiers = ["bold"] }
+"ui.popup" = { fg = "foreground", bg = "background" }
+"ui.window" = { fg = "color8" }
+"ui.selection" = { bg = "selection_background", fg = "selection_foreground" }
+"ui.cursor" = { fg = "background", bg = "cursor" }
+"ui.cursor.primary" = { fg = "background", bg = "cursor" }
+"ui.cursorline.primary" = { bg = "lighter_background" }
+"diagnostic.error" = { underline = { color = "color1", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "color3", style = "curl" } }
+"diagnostic.info" = { underline = { color = "color4", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "color6", style = "curl" } }
+
+[palette]
+background = "#080A0D"
+foreground = "#E6E6E6"
+lighter_background = "#101318"
+cursor = "#00D9FF"
+selection_background = "#5A1118"
+selection_foreground = "#FFFFFF"
+color1 = "#FF1E32"
+color2 = "#55FF88"
+color3 = "#FFD700"
+color4 = "#00B8FF"
+color5 = "#FF3CAC"
+color6 = "#00D9FF"
+color8 = "#626A73"
