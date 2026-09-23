@@ -14,11 +14,10 @@ ShellRoot {
     property string menuMode: "apps"
     property string searchText: ""
     property var selectedApp: null
+    property var selectedAction: null
+    // Apps belong exclusively to Super + Alt + Space. The command and system
+    // menus search only their own actions.
     property var rootMenuItems: [
-        { name: "Apps", icon: "", color: "#00D9FF", mode: "apps" },
-        { name: "Browser", icon: "", color: "#FF1E32", command: ["zen-browser"] },
-        { name: "Terminal", icon: "", color: "#55FF88", command: ["alacritty"] },
-        { name: "Files", icon: "", color: "#FFD700", command: ["thunar"] },
         { name: "System", icon: "", color: "#B56CFF", mode: "system" }
     ]
     property var systemMenuItems: [
@@ -38,10 +37,11 @@ ShellRoot {
         root.menuMode = mode
         root.opened = true
 
-        if (mode === "apps") {
-            searchInput.text = ""
-            Qt.callLater(function() { searchInput.forceActiveFocus() })
-        }
+        searchInput.text = ""
+        root.searchText = ""
+        root.selectedApp = null
+        root.selectedAction = null
+        Qt.callLater(function() { searchInput.forceActiveFocus() })
     }
 
     IpcHandler {
@@ -77,8 +77,8 @@ ShellRoot {
         Rectangle {
             anchors.fill: parent
 
-            color: "#030507"
-            opacity: 0.82
+            color: "#000000"
+            opacity: 0.62
 
             MouseArea {
                 anchors.fill: parent
@@ -308,7 +308,7 @@ ShellRoot {
             Rectangle {
                 id: searchConsole
 
-                visible: root.menuMode === "apps"
+                visible: true
 
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.top: parent.top
@@ -360,9 +360,16 @@ ShellRoot {
                     onTextChanged: root.searchText = text
                     Keys.onEscapePressed: root.opened = false
                     Keys.onReturnPressed: {
-                        if (root.selectedApp) {
+                        if (root.menuMode === "apps" && root.selectedApp) {
                             root.selectedApp.execute()
                             root.opened = false
+                        } else if (root.menuMode !== "apps" && root.selectedAction) {
+                            if (root.selectedAction.mode)
+                                root.showLauncher(root.selectedAction.mode)
+                            else {
+                                Quickshell.execDetached(root.selectedAction.command)
+                                root.opened = false
+                            }
                         }
                     }
                 }
@@ -372,7 +379,11 @@ ShellRoot {
                     anchors.leftMargin: 68
                     anchors.verticalCenter: parent.verticalCenter
                     visible: searchInput.text.length === 0
-                    text: "SEARCH APPLICATIONS"
+                    text: root.menuMode === "apps"
+                          ? "SEARCH APPLICATIONS"
+                          : root.menuMode === "system"
+                            ? "SEARCH SYSTEM ACTIONS"
+                            : "SEARCH COMMANDS"
                     color: "#73808A"
                     font.family: "JetBrainsMono Nerd Font"
                     font.pixelSize: 14
@@ -394,6 +405,9 @@ ShellRoot {
 
                 model: ScriptModel {
                     values: {
+                        if (root.menuMode !== "apps")
+                            return []
+
                         if (root.searchText.trim() !== "")
                             return []
 
@@ -408,6 +422,7 @@ ShellRoot {
                     required property var modelData
                     required property int index
 
+                    visible: root.menuMode === "apps"
                     width: 84
                     height: 88
                     property real angle: (-90 + index * (360 / 13)) * Math.PI / 180
@@ -502,6 +517,11 @@ ShellRoot {
                 Repeater {
                     model: ScriptModel {
                         values: {
+                            if (root.menuMode !== "apps") {
+                                root.selectedApp = null
+                                return []
+                            }
+
                             const query = root.searchText.trim().toLowerCase()
                             let apps = [...DesktopEntries.applications.values]
                                 .filter(app => app.name)
@@ -531,6 +551,7 @@ ShellRoot {
                     delegate: Rectangle {
                         required property var modelData
 
+                        visible: root.menuMode === "apps"
                         anchors.centerIn: parent
                         width: 142
                         height: 142
@@ -642,7 +663,16 @@ ShellRoot {
                 }
 
                 Repeater {
-                    model: actionMenu.items
+                    model: ScriptModel {
+                        values: {
+                            const query = root.searchText.trim().toLowerCase()
+                            const matches = query === "" ? actionMenu.items : actionMenu.items.filter(action =>
+                                action.name.toLowerCase().includes(query)
+                            )
+                            root.selectedAction = query !== "" && matches.length > 0 ? matches[0] : null
+                            return matches
+                        }
+                    }
 
                     delegate: Item {
                         required property var modelData
@@ -707,6 +737,16 @@ ShellRoot {
                             elide: Text.ElideRight
                         }
                     }
+                }
+
+                Text {
+                    anchors.centerIn: parent
+                    visible: root.searchText.trim().length > 0 && !root.selectedAction
+                    text: "NO MENU ACTION FOUND"
+                    color: "#FF6675"
+                    font.family: "JetBrainsMono Nerd Font"
+                    font.pixelSize: 11
+                    font.bold: true
                 }
             }
 
